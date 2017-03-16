@@ -3,7 +3,7 @@ webpackJsonp([7],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(390);
+	module.exports = __webpack_require__(393);
 
 
 /***/ },
@@ -77,7 +77,7 @@ webpackJsonp([7],{
 	
 	var _DateTable2 = _interopRequireDefault(_DateTable);
 	
-	var _CalendarHeader = __webpack_require__(273);
+	var _CalendarHeader = __webpack_require__(278);
 	
 	var _CalendarHeader2 = _interopRequireDefault(_CalendarHeader);
 	
@@ -97,7 +97,7 @@ webpackJsonp([7],{
 	
 	var _DateInput2 = _interopRequireDefault(_DateInput);
 	
-	var _index = __webpack_require__(272);
+	var _index = __webpack_require__(277);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -590,15 +590,23 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
+	var _defineProperty2 = __webpack_require__(272);
+	
+	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+	
 	var _react = __webpack_require__(3);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(276);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
 	
 	var _DateConstants = __webpack_require__(269);
 	
 	var _DateConstants2 = _interopRequireDefault(_DateConstants);
 	
-	var _util = __webpack_require__(272);
+	var _util = __webpack_require__(277);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -694,8 +702,11 @@ webpackJsonp([7],{
 	    passed = 0;
 	
 	    for (iIndex = 0; iIndex < _DateConstants2.default.DATE_ROW_COUNT; iIndex++) {
+	      var _cx;
+	
 	      var isCurrentWeek = void 0;
 	      var weekNumberCell = void 0;
+	      var isSelectedWeek = false;
 	      var dateCells = [];
 	      if (showWeekNumber) {
 	        weekNumberCell = _react2.default.createElement(
@@ -738,11 +749,13 @@ webpackJsonp([7],{
 	            if (startValue) {
 	              if (isSameDay(current, startValue)) {
 	                selected = true;
+	                isSelectedWeek = true;
 	              }
 	            }
 	            if (startValue && endValue) {
 	              if (isSameDay(current, endValue)) {
 	                selected = true;
+	                isSelectedWeek = true;
 	              } else if (current.isAfter(startValue, 'day') && current.isBefore(endValue, 'day')) {
 	                cls += ' ' + inRangeClass;
 	              }
@@ -751,6 +764,7 @@ webpackJsonp([7],{
 	        } else if (isSameDay(current, value)) {
 	          // keyboard change value, highlight works
 	          selected = true;
+	          isSelectedWeek = true;
 	        }
 	
 	        if (isSameDay(current, selectedValue)) {
@@ -817,12 +831,13 @@ webpackJsonp([7],{
 	
 	        passed++;
 	      }
+	
 	      tableHtml.push(_react2.default.createElement(
 	        'tr',
 	        {
 	          key: iIndex,
 	          role: 'row',
-	          className: isCurrentWeek && prefixCls + '-current-week'
+	          className: (0, _classnames2.default)((_cx = {}, (0, _defineProperty3.default)(_cx, prefixCls + '-current-week', isCurrentWeek), (0, _defineProperty3.default)(_cx, prefixCls + '-selected-week', isSelectedWeek), _cx))
 	        },
 	        weekNumberCell,
 	        dateCells
@@ -841,7 +856,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 273:
+/***/ 278:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -854,11 +869,11 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _MonthPanel = __webpack_require__(274);
+	var _MonthPanel = __webpack_require__(279);
 	
 	var _MonthPanel2 = _interopRequireDefault(_MonthPanel);
 	
-	var _YearPanel = __webpack_require__(275);
+	var _YearPanel = __webpack_require__(280);
 	
 	var _YearPanel2 = _interopRequireDefault(_YearPanel);
 	
@@ -1044,7 +1059,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 274:
+/***/ 279:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1057,7 +1072,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _YearPanel = __webpack_require__(275);
+	var _YearPanel = __webpack_require__(280);
 	
 	var _YearPanel2 = _interopRequireDefault(_YearPanel);
 	
@@ -1215,7 +1230,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 275:
+/***/ 280:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1224,7 +1239,7 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
-	var _defineProperty2 = __webpack_require__(276);
+	var _defineProperty2 = __webpack_require__(272);
 	
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 	
@@ -1244,7 +1259,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(280);
+	var _classnames = __webpack_require__(276);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -1477,7 +1492,7 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
-	var _defineProperty2 = __webpack_require__(276);
+	var _defineProperty2 = __webpack_require__(272);
 	
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 	
@@ -1497,7 +1512,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(280);
+	var _classnames = __webpack_require__(276);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -1699,7 +1714,7 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
-	var _defineProperty2 = __webpack_require__(276);
+	var _defineProperty2 = __webpack_require__(272);
 	
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 	
@@ -1719,7 +1734,7 @@ webpackJsonp([7],{
 	
 	var _mapSelf2 = _interopRequireDefault(_mapSelf);
 	
-	var _classnames = __webpack_require__(280);
+	var _classnames = __webpack_require__(276);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -1824,7 +1839,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _util = __webpack_require__(272);
+	var _util = __webpack_require__(277);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1906,7 +1921,7 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
-	var _defineProperty2 = __webpack_require__(276);
+	var _defineProperty2 = __webpack_require__(272);
 	
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 	
@@ -1916,7 +1931,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames2 = __webpack_require__(280);
+	var _classnames2 = __webpack_require__(276);
 	
 	var _classnames3 = _interopRequireDefault(_classnames2);
 	
@@ -1960,7 +1975,7 @@ webpackJsonp([7],{
 	  value: true
 	});
 	
-	var _defineProperty2 = __webpack_require__(276);
+	var _defineProperty2 = __webpack_require__(272);
 	
 	var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 	
@@ -1968,7 +1983,7 @@ webpackJsonp([7],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(280);
+	var _classnames = __webpack_require__(276);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -1976,7 +1991,7 @@ webpackJsonp([7],{
 	
 	var _moment2 = _interopRequireDefault(_moment);
 	
-	var _index = __webpack_require__(272);
+	var _index = __webpack_require__(277);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2527,7 +2542,7 @@ webpackJsonp([7],{
 
 /***/ },
 
-/***/ 390:
+/***/ 393:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2550,7 +2565,7 @@ webpackJsonp([7],{
 	
 	var _Picker2 = _interopRequireDefault(_Picker);
 	
-	var _zh_CN = __webpack_require__(329);
+	var _zh_CN = __webpack_require__(330);
 	
 	var _zh_CN2 = _interopRequireDefault(_zh_CN);
 	
@@ -2562,9 +2577,9 @@ webpackJsonp([7],{
 	
 	var _moment2 = _interopRequireDefault(_moment);
 	
-	__webpack_require__(335);
-	
 	__webpack_require__(336);
+	
+	__webpack_require__(337);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
